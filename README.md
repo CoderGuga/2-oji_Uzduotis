@@ -42,3 +42,4 @@ Rezultatai naudojant struct -O3 flag
 Rezultatai naudojant class -O3 flag
 
 ![image](https://github.com/user-attachments/assets/55473862-5c88-42d2-b72a-89bdf989c507)
+
