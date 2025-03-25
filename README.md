@@ -13,9 +13,12 @@ Rezultatai naudojant class be flagų
 
 Rezultatai naudojant struct -O1 flag
 
+![image](https://github.com/user-attachments/assets/7d2415db-49f9-42f0-ba96-f72cd47aec1d)
 
 
 Rezultatai naudojant class -O1 flag
+
+![image](https://github.com/user-attachments/assets/2c3efd61-a1e2-48e5-ae6d-ebc40f6efb0b)
 
 
 
