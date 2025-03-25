@@ -11,3 +11,24 @@ Rezultatai naudojant class be flagų
 
 
 
+Rezultatai naudojant struct -O1 flag
+
+
+
+Rezultatai naudojant class -O1 flag
+
+
+
+Rezultatai naudojant struct -O2 flag
+
+
+
+Rezultatai naudojant class -O2 flag
+
+
+
+Rezultatai naudojant struct -O3 flag
+
+
+
+Rezultatai naudojant class -O3 flag
