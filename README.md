@@ -24,9 +24,13 @@ Rezultatai naudojant class -O1 flag
 
 Rezultatai naudojant struct -O2 flag
 
+![image](https://github.com/user-attachments/assets/9d4d6523-0147-4c72-b9db-22b8d3d76a6b)
 
 
 Rezultatai naudojant class -O2 flag
+
+![image](https://github.com/user-attachments/assets/2ca99770-0efc-4aef-a5bd-91a4531ff309)
+
 
 
 
