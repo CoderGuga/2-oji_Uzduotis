@@ -36,6 +36,9 @@ Rezultatai naudojant class -O2 flag
 
 Rezultatai naudojant struct -O3 flag
 
+![image](https://github.com/user-attachments/assets/aac6cc1e-0aa6-422d-8437-cedeba078379)
 
 
 Rezultatai naudojant class -O3 flag
+
+![image](https://github.com/user-attachments/assets/55473862-5c88-42d2-b72a-89bdf989c507)
