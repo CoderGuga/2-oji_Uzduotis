@@ -33,6 +33,16 @@ using std::stringstream;
 using std::list;
 using std::deque;
 
+
+template <typename T>
+optional<T> string_to(const string & s);
+
+int CheckInt(const string& text, int max = 0);
+int TypeInt(const string& text, int max = 0);
+string TypeString(const string& prompt);
+double Median(vector<int> numbers);
+double Average(vector<int> numbers);
+
 extern int MAX_GRADES;
 
 class Stud {
@@ -77,6 +87,18 @@ public:
 
     void clearNdVector() {this->ndVector.clear(); }
     void addNd(int nd) {this->ndVector.push_back(nd); }
+
+    //rule of 5
+    Stud(const Stud& other);
+    Stud& operator=(const Stud& other);
+    Stud(Stud&& other) noexcept;
+    Stud& operator=(Stud&& other) noexcept;
+
+    friend std::ostream& operator<<(std::ostream& os, const Stud& stud);
+    friend std::istream& operator>>(std::istream& is, Stud& student);
+    
 };
+
+void MethodTest();
 
 #endif
