@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Collect source files
 set(SOURCES
-    v1.1.cpp
+    v1.2.cpp
     helper.cpp
     helperFunctions.cpp
     cFunctions.tpp
@@ -25,4 +25,4 @@ add_executable(MyExecutable ${SOURCES})
 message(STATUS "Building MyExecutable from ${SOURCES}")
 
 # Enable extra warnings (optional but useful)
-target_compile_options(MyExecutable PRIVATE -Wall -Wextra -Wpedantic -O3)
+target_compile_options(MyExecutable PRIVATE -Wall -Wextra -Wpedantic)
