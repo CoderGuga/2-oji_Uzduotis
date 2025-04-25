@@ -45,10 +45,20 @@ double Average(vector<int> numbers);
 
 extern int MAX_GRADES;
 
-class Stud {
+class Zmogus {
+    protected:
+        string pavarde;
+        string vardas;
+
+    public:
+        Zmogus() {pavarde = "Pavardenis"; vardas = "Vardenis";};
+        Zmogus(const Zmogus& other) : pavarde(other.pavarde), vardas(other.vardas) {}
+        Zmogus(Zmogus&& other) : pavarde(std::move(other.pavarde)), vardas(std::move(other.vardas)) {}
+        virtual void KiekGavauIsEgz() = 0;
+};
+
+class Stud : public Zmogus {
 private:
-    string pavarde;
-    string vardas;
     int egz;
     vector<int> ndVector;
     int* nd;
@@ -96,7 +106,8 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, const Stud& stud);
     friend std::istream& operator>>(std::istream& is, Stud& student);
-    
+
+    void KiekGavauIsEgz() override {cout << "Is egzamino gavau" << egz << endl;}
 };
 
 void MethodTest();

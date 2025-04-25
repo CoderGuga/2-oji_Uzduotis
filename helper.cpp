@@ -87,7 +87,7 @@ double Average(vector<int> numbers) {
 
 int MAX_GRADES = 10;
 
-Stud::Stud() : pavarde("Pavardenis"), vardas("Vardenis"), egz(10), nd(nullptr), nd_count(0), galutinisVid(0.0f), galutinisMed(0.0f) {
+Stud::Stud() : Zmogus(), egz(10), nd(nullptr), nd_count(0), galutinisVid(0.0f), galutinisMed(0.0f) {
     // Initialization code (if any)
     cout << "constructor"<<endl;
 }
@@ -97,9 +97,8 @@ Stud::~Stud() {
     cout << "destructor"<<endl;
 }
 
-Stud::Stud(const Stud& other)
-    : pavarde(other.pavarde),
-      vardas(other.vardas),
+Stud::Stud(const Stud& other) :
+        Zmogus(other),
       egz(other.egz),
       ndVector(other.ndVector),
       nd_count(other.nd_count),
@@ -142,8 +141,7 @@ Stud& Stud::operator=(const Stud& other) {
 }
 
 Stud::Stud(Stud&& other) noexcept
-    : pavarde(std::move(other.pavarde)),
-      vardas(std::move(other.vardas)),
+    : Zmogus(std::move(other)),
       egz(other.egz),
       ndVector(std::move(other.ndVector)),
       nd(other.nd),
