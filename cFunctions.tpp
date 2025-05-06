@@ -338,6 +338,7 @@ void DataProccess3(string filename, string sortType, int containerType)
     auto start = high_resolution_clock::now();
 
     ReadFromFile(students, filename);
+    string size = std::to_string(students.size());
     if (containerType == 2)
         SortStudentOneContainerListADV(students, neislaike);
     else
@@ -349,11 +350,16 @@ void DataProccess3(string filename, string sortType, int containerType)
     std::chrono::duration<double> duration2 = high_resolution_clock::now() - start2;
     cout << "Rikiavimas uztruko " << duration2.count() << " sekundes." << endl;
 
-    students.clear();
-    neislaike.clear();
+    
 
     std::chrono::duration<double> duration = high_resolution_clock::now() - start;
     cout << "Bendrai uztruko " << duration.count() << " sekundes." << endl;
+
+    WriteToFile(students, "islaike" + size + ".txt");
+    WriteToFile(neislaike, "neislaike" + size + ".txt");
+
+    students.clear();
+    neislaike.clear();
 }
 
 void FullDataProccess(string filename1, string filename2, string filename3, string filename4, string filename5)
