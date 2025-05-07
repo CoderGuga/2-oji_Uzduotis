@@ -1,9 +1,71 @@
-Pateikti visi progarmoje naudojami failai, bei windows OS veikiantis .exe failais patogumui.
+1. Sistemos Reikalavimai
 
-Progarama veikia identiškai, kaip ir v1.2, tačiau šįkart Stud klasė yra išvesta iš bazinės Žmogus klasės. Žmogaus klasė yra abstrakčioji, todėl jos objektų sukurti yra neįmanoma.
+Įsitikinkite, kad turite šias priemones:
 
-Atsidarius programą ir įvedus 9, programa automatiškai padarys visų 5 "rule of 5" metodų, bei perdentą įvestį ir išvestį (tiek terminale, tiek faile).
+Operacinė sistema: Windows, Linux arba macOS
+
+C++ kompiliatorius: GCC (MinGW Windows sistemai), Clang arba MSVC
+
+CMake: 3.10 ar naujesnė versija
+
+Git: 2.0 ar naujesnė versija
+
+Patikrinkite, ar įrankiai įdiegti:
+
+          cmake --version
+          gcc --version
+          git --version
 
 
-Pavyzdys
-![image](https://github.com/user-attachments/assets/7c3e2723-b2d2-4ea5-843d-08cc12acb5f2)
+2. Projekto Atsisiuntimas
+
+
+     Atidarykite terminalą (arba "Command Prompt" Windows sistemoje).
+
+     Nukeliaukite į katalogą, kuriame norite atsisiųsti projektą.
+
+          cd /kelias/iki/katalogo
+
+     Nukopijuokite projektą iš GitHub naudodami komandą:
+
+          git clone https://github.com/vartotojas/projektas.git
+
+   Pereikite į projekto katalogą:
+   
+          cd projektas
+
+
+3. Programos Kompiliavimas
+
+
+     Sukurkite "build" katalogą ir pereikite į jį:
+
+          mkdir build && cd build
+
+     Paleiskite "CMake" komandą:
+
+          cmake ..
+
+     Kompiliuokite programą:
+
+  Windows (naudojant MinGW):
+
+    mingw32-make
+
+  Linux / macOS:
+  
+    make
+
+
+
+4. Programos Paleidimas
+
+     Po sėkmingo kompiliavimo, galite paleisti programą:
+
+  Windows:
+
+    ./MyExecutable.exe
+
+  Linux / macOS:
+  
+    ./MyExecutable
