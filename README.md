@@ -69,3 +69,43 @@ Patikrinkite, ar įrankiai įdiegti:
   Linux / macOS:
   
     ./MyExecutable
+
+
+
+
+
+**Releasai**
+
+v2.0
+
+Pridėtas Unit Testavimas
+
+![image](https://github.com/user-attachments/assets/7dca259c-92f3-496a-90c6-4d90c52a0fd3)
+
+
+v1.5
+
+*Studentas* klasė paversta išvestine iš bazinės, abstrakčiosios *Žmogus* klasės
+
+
+v1.2
+
+Klasei *Studentas* pridėti "Rule of five" metodai, bei įvesties iš išvesties operatoriai darbui su konsole ir failais.
+
+
+v1.1
+
+*Studentas* perdarytas iš struktūros į klasę, pridėti getteriai ir setteriai.
+
+
+v1.0
+
+Programa palaiko vector, list ir deque konteinerių tipus, sukurtos 3 skirtingos strategijos darbui su konteineriais:
+
+1. Rūšiuojami studentai kopijuojami per 2 konteinerius, pagreitinant darbą su list, bet neoptimizuojant atminties.
+
+2. Rūšiuojami studentai naudoja tik 1 konteinerį, tokiu būdu optimizuojant atminties naudojimą.
+
+3. Studentų rūšiavimas naudoja find ir partition metodus, darbo optimizavimui.
+
+Pridėta CMakeLists.txt įdiegimo instrukcija.
