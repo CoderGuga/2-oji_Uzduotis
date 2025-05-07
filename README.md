@@ -28,11 +28,11 @@ Patikrinkite, ar įrankiai įdiegti:
 
      Nukopijuokite projektą iš GitHub naudodami komandą:
 
-          git clone https://github.com/vartotojas/projektas.git
+          git clone https://github.com/CoderGuga/2-oji_Uzduotis.git
 
    Pereikite į projekto katalogą:
    
-          cd projektas
+          cd 2-oji_Uzduotis/v2.0
 
 
 3. Programos Kompiliavimas
