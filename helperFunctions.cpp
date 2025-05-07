@@ -35,8 +35,6 @@ string GenSurname()
 
 void GenFile(string filename, int amount)
 {
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    std::mt19937 generator(seed); // Mersenne Twister engine
     int ndCount = 15;
     std::ostringstream output;
 
@@ -56,9 +54,9 @@ void GenFile(string filename, int amount)
                << std::setw(15) << ("Pavarde" + std::to_string(i));
         for (int j = 1; j <= ndCount; j++)
         {
-            output << std::setw(10) << RandIntWSeed(1, 10, generator);
+            output << std::setw(10) << RandInt(1, 10);
         }
-        output << std::setw(10) << RandIntWSeed(1, 10, generator) << endl;
+        output << std::setw(10) << RandInt(1, 10) << endl;
     }
 
     std::chrono::duration<double> duration = high_resolution_clock::now() - start;

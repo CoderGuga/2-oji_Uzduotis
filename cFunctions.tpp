@@ -412,6 +412,22 @@ void FullContainerTest(string filename1, string filename2, string filename3, str
             DataProccess3<list<Stud>>(filenames[i], sortType, 2);
     }
     duration = high_resolution_clock::now() - start;
+    cout << "Bendrai list uztruko " << duration.count() << " sekundes." << endl;
+    listTime+=duration.count();
+
+
+    cout<<"Deque konteinerio testavimas\n ---------------------------------------------------------------------------\n";
+    start = high_resolution_clock::now();
+    for (int i = 0; i < 5; i++)
+    {
+        if (stratNum == 1)
+            DataProccess1<deque<Stud>>(filenames[i], sortType, false);
+        else if (stratNum == 2)
+            DataProccess2<deque<Stud>>(filenames[i], sortType, 3);
+        else if (stratNum == 3)
+            DataProccess3<deque<Stud>>(filenames[i], sortType, 3);
+    }
+    duration = high_resolution_clock::now() - start;
     cout << "Bendrai deque uztruko " << duration.count() << " sekundes." << endl;
     dequeTime+=duration.count();
 

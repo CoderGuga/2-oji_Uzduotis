@@ -89,12 +89,12 @@ int MAX_GRADES = 10;
 
 Stud::Stud() : Zmogus(), egz(10), nd(nullptr), nd_count(0), galutinisVid(0.0f), galutinisMed(0.0f) {
     // Initialization code (if any)
-    cout << "constructor"<<endl;
+    //cout << "constructor"<<endl;
 }
 
 Stud::~Stud() {
     delete[] nd; // Cleanup dynamically allocated array
-    cout << "destructor"<<endl;
+    //cout << "destructor"<<endl;
 }
 
 Stud::Stud(const Stud& other) :
@@ -110,7 +110,7 @@ Stud::Stud(const Stud& other) :
     } else {
         nd = nullptr;
     }
-    cout << "copy constructor"<<endl;
+    //cout << "copy constructor"<<endl;
 }
 
 Stud& Stud::operator=(const Stud& other) {
@@ -135,7 +135,7 @@ Stud& Stud::operator=(const Stud& other) {
     } else {
         nd = nullptr;
     }
-    cout << "copy assignment operator"<<endl;
+    //cout << "copy assignment operator"<<endl;
 
     return *this;
 }
@@ -150,7 +150,7 @@ Stud::Stud(Stud&& other) noexcept
       galutinisMed(other.galutinisMed) {
     other.nd = nullptr; // Leave the source object in a valid state
     other.nd_count = 0;
-    cout << "move constructor"<<endl;
+    //cout << "move constructor"<<endl;
 }
 
 Stud& Stud::operator=(Stud&& other) noexcept {
@@ -173,7 +173,7 @@ Stud& Stud::operator=(Stud&& other) noexcept {
     other.nd = nullptr;
     other.nd_count = 0;
 
-    cout << "move assignment operator"<<endl;
+    //cout << "move assignment operator"<<endl;
 
     return *this;
 }
