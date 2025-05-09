@@ -106,6 +106,8 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, const Stud& stud);
     friend std::istream& operator>>(std::istream& is, Stud& student);
+    friend bool operator==(const Stud& lhs, const Stud& rhs);
+    friend bool operator!=(const Stud& lhs, const Stud& rhs);
 
     void KiekGavauIsEgz() override {cout << "Is egzamino gavau" << egz << endl;}
 };

@@ -349,6 +349,10 @@ void DataProccess3(string filename, string sortType, int containerType)
     std::chrono::duration<double> duration2 = high_resolution_clock::now() - start2;
     cout << "Rikiavimas uztruko " << duration2.count() << " sekundes." << endl;
 
+    string studCount = std::to_string(students.size() + neislaike.size());
+    WriteToFile(students, "islaike " +  studCount);
+    WriteToFile(neislaike, "neislaike " + studCount);
+
     students.clear();
     neislaike.clear();
 
@@ -412,10 +416,10 @@ void FullContainerTest(string filename1, string filename2, string filename3, str
             DataProccess3<list<Stud>>(filenames[i], sortType, 2);
     }
     duration = high_resolution_clock::now() - start;
-    cout << "Bendrai list uztruko " << duration.count() << " sekundes." << endl;
+    cout << "Bendrai list uztruko " << duration.count() << " sekundes.\n" << endl;
     listTime+=duration.count();
 
-
+    //deque test
     cout<<"Deque konteinerio testavimas\n ---------------------------------------------------------------------------\n";
     start = high_resolution_clock::now();
     for (int i = 0; i < 5; i++)

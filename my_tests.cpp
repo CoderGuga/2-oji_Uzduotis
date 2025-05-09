@@ -10,19 +10,19 @@ TEST_CASE("Testing Rule of Five and Stud functionality", "[Stud]") {
         Stud s1;
         s1.setVardas("Jonas");
         Stud s2(s1); // Copy constructor
-        REQUIRE(s2.getVardas() == "Jonas");
+        REQUIRE(s2 == s1);
 
         s1.setVardas("Tadas");
-        REQUIRE(s2.getVardas() == "Jonas"); // s2 should remain unchanged
+        REQUIRE(s2 != s1); // s2 should remain unchanged
 
         s2 = s1; // Copy assignment
-        REQUIRE(s2.getVardas() == "Tadas");
+        REQUIRE(s2 == s1);
     }
 
     SECTION("Move Constructor and Assignment") {
         Stud s1;
         s1.setVardas("Pranas");
-        Stud s3 = std::move(s1); // Move constructor
+        Stud s3 (std::move(s1)); // Move constructor
         REQUIRE(s1.getVardas() == ""); // s1 should be in a valid but unspecified state
         REQUIRE(s3.getVardas() == "Pranas");
 

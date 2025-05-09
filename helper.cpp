@@ -93,8 +93,14 @@ Stud::Stud() : Zmogus(), egz(10), nd(nullptr), nd_count(0), galutinisVid(0.0f), 
 }
 
 Stud::~Stud() {
-    delete[] nd; // Cleanup dynamically allocated array
-    //cout << "destructor"<<endl;
+    delete[] nd;
+    nd = nullptr;
+
+    ndVector.clear();
+
+    nd_count = 0;
+    galutinisVid = 0.0f;
+    galutinisMed = 0.0f;
 }
 
 Stud::Stud(const Stud& other) :
@@ -148,8 +154,11 @@ Stud::Stud(Stud&& other) noexcept
       nd_count(other.nd_count),
       galutinisVid(other.galutinisVid),
       galutinisMed(other.galutinisMed) {
-    other.nd = nullptr; // Leave the source object in a valid state
-    other.nd_count = 0;
+        other.nd = nullptr;
+        other.nd_count = 0;
+        other.egz = 0;
+        other.galutinisMed = 0;
+        other.galutinisVid = 0;
     //cout << "move constructor"<<endl;
 }
 
@@ -172,6 +181,9 @@ Stud& Stud::operator=(Stud&& other) noexcept {
     // Leave the source object in a valid state
     other.nd = nullptr;
     other.nd_count = 0;
+    other.egz = 0;
+    other.galutinisMed = 0;
+    other.galutinisVid = 0;
 
     //cout << "move assignment operator"<<endl;
 
@@ -242,23 +254,39 @@ std::istream& operator>>(std::istream& is, Stud& student) {
     return is;
 }
 
+bool operator==(const Stud& lhs, const Stud& rhs) {
+    return lhs.getPavarde() == rhs.getPavarde() &&
+           lhs.getVardas() == rhs.getVardas() &&
+           lhs.getEgz() == rhs.getEgz() &&
+           lhs.getNdVector() == rhs.getNdVector() &&
+           lhs.getNdCount() == rhs.getNdCount() &&
+           lhs.getGalutinisVid() == rhs.getGalutinisVid() &&
+           lhs.getGalutinisMed() == rhs.getGalutinisMed();
+}
+
+bool operator!=(const Stud& lhs, const Stud& rhs) {
+    return !(lhs == rhs);
+}
+
 void MethodTest()
 {
     Stud s1;
     s1.setVardas("Jonas");
+    s1.setEgz(10);
+    cout << "s1 vardas " << s1<<endl;
     Stud s2(s1);
-    cout << "s2 vardas " << s2.getVardas()<<endl;
+    cout << "s2 vardas " << s2<<endl;
     s1.setVardas("Tadas");
-    cout << "s2 vardas " << s2.getVardas()<<endl;
+    cout << "s2 vardas " << s2<<endl;
     s2 = s1;
-    cout << "s2 vardas " << s2.getVardas()<<endl;
+    cout << "s2 vardas " << s2<<endl;
     s1.setVardas("Pranas");
-    Stud s3 = std::move(s1);
-    cout << "s1 vardas " << s1.getVardas()<<endl;
-    cout << "s3 vardas " << s3.getVardas()<<endl;
+    Stud s3 (std::move(s1));
+    cout << "s1 vardas " << s1<<endl;
+    cout << "s3 vardas " << s3<<endl;
     s3 = std::move(s2);
-    cout << "s2 vardas " << s2.getVardas()<<endl;
-    cout << "s3 vardas " << s3.getVardas()<<endl;
+    cout << "s2 vardas " << s2<<endl;
+    cout << "s3 vardas " << s3<<endl;
 
     Stud s4;
     cin >> s4;
